@@ -1,0 +1,15 @@
+C:\Users\armatos\Documents\VS 2022 Programs\ProjetoBanco\ProjetoBanco\bin\Debug\ProjetoBanco.exe.config
+C:\Users\armatos\Documents\VS 2022 Programs\ProjetoBanco\ProjetoBanco\bin\Debug\ProjetoBanco.exe
+C:\Users\armatos\Documents\VS 2022 Programs\ProjetoBanco\ProjetoBanco\bin\Debug\ProjetoBanco.pdb
+C:\Users\armatos\Documents\VS 2022 Programs\ProjetoBanco\ProjetoBanco\obj\Debug\ProjetoBanco.csproj.AssemblyReference.cache
+C:\Users\armatos\Documents\VS 2022 Programs\ProjetoBanco\ProjetoBanco\obj\Debug\ProjetoBanco.csproj.SuggestedBindingRedirects.cache
+C:\Users\armatos\Documents\VS 2022 Programs\ProjetoBanco\ProjetoBanco\obj\Debug\ProjetoBanco.csproj.CoreCompileInputs.cache
+C:\Users\armatos\Documents\VS 2022 Programs\ProjetoBanco\ProjetoBanco\obj\Debug\ProjetoBanco.exe
+C:\Users\armatos\Documents\VS 2022 Programs\ProjetoBanco\ProjetoBanco\obj\Debug\ProjetoBanco.pdb
+C:\Users\xande\Documents\VS Programs\ProjetoBanco\ProjetoBanco\obj\Debug\ProjetoBanco.csprojAssemblyReference.cache
+C:\Users\xande\Documents\VS Programs\ProjetoBanco\ProjetoBanco\obj\Debug\ProjetoBanco.csproj.CoreCompileInputs.cache
+C:\Users\xande\Documents\VS Programs\ProjetoBanco\ProjetoBanco\obj\Debug\ProjetoBanco.exe
+C:\Users\xande\Documents\VS Programs\ProjetoBanco\ProjetoBanco\obj\Debug\ProjetoBanco.pdb
+C:\Users\xande\Documents\VS Programs\ProjetoBanco\ProjetoBanco\bin\Debug\ProjetoBanco.exe.config
+C:\Users\xande\Documents\VS Programs\ProjetoBanco\ProjetoBanco\bin\Debug\ProjetoBanco.exe
+C:\Users\xande\Documents\VS Programs\ProjetoBanco\ProjetoBanco\bin\Debug\ProjetoBanco.pdb
