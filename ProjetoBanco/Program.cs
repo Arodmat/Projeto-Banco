@@ -13,13 +13,13 @@ namespace ProjetoBanco
             Console.Clear();
             Console.WriteLine("------------BYTEBANK---------------------");
             Console.WriteLine();
-            Console.WriteLine("1 - Inserir novo cliente");
-            Console.WriteLine("2 - Deletar um cliente");
-            Console.WriteLine("3 - Listar todas as contas registradas");
-            Console.WriteLine("4 - Detalhes de um cliente");
-            Console.WriteLine("5 - Total armazenado no banco");
-            Console.WriteLine("6 - Manipular a conta");
-            Console.WriteLine("0 - Sair do programa");
+            Console.WriteLine("[1] - Inserir novo cliente");
+            Console.WriteLine("[2] - Deletar um cliente");
+            Console.WriteLine("[3] - Listar todas as contas registradas");
+            Console.WriteLine("[4] - Detalhes de um cliente");
+            Console.WriteLine("[5] - Total armazenado no banco");
+            Console.WriteLine("[6] - Manipular a conta");
+            Console.WriteLine("[0] - Sair do programa");
             Console.WriteLine();
             Console.WriteLine();
             Console.Write("Por favor, selecione opção desejada: ");
@@ -134,7 +134,7 @@ namespace ProjetoBanco
                 {
                     cpfexiste = true;
                     Console.WriteLine();
-                    Console.WriteLine("Voltando ao menu principal");
+                    Console.WriteLine("Voltando ao menu principal(Fazendo logout)");
                     Console.WriteLine();
 
                 }
@@ -166,7 +166,7 @@ namespace ProjetoBanco
                 if(cont==2)
                 {
                     Console.WriteLine();
-                    Console.WriteLine("Tentativas encerradas. Voltando ao menu principal");
+                    Console.WriteLine("Tentativas encerradas. Voltando ao menu principal(Fazendo logout)");
                 }
                 else // Aqui que de fato vai começar as operações na conta, porque já foi verificado o CPF e senha
                 {
@@ -182,7 +182,7 @@ namespace ProjetoBanco
                         Console.WriteLine("[1] - Deposito");
                         Console.WriteLine("[2] - Saque");
                         Console.WriteLine("[3] - Transferencia");
-                        Console.WriteLine("[0] - Voltar ao menu principal");
+                        Console.WriteLine("[0] - Voltar ao menu principal(Fazer logout)");
                         Console.WriteLine();
                         Console.Write("Selecione opção desejada: ");
                         opcao = int.Parse(Console.ReadLine());
@@ -192,6 +192,15 @@ namespace ProjetoBanco
                             Console.WriteLine();
                             Console.Write("Quantia a ser depositada: R$ ");
                             quantia = double.Parse(Console.ReadLine());
+                            while (quantia <= 0)
+                            {
+
+                                Console.WriteLine();
+                                Console.WriteLine("Quantia inválida.");
+                                Console.Write("Quantia a ser retirada: R$ ");
+                                quantia = double.Parse(Console.ReadLine());
+
+                            }
                             Saldos[DadoNumUsuario] += quantia;
                             Console.WriteLine();
                             Console.WriteLine("Depósito realizado.");
@@ -204,10 +213,11 @@ namespace ProjetoBanco
                             Console.WriteLine();
                             Console.Write("Quantia a ser retirada: R$ ");
                             quantia = double.Parse(Console.ReadLine());
-                            while(quantia > Saldos[DadoNumUsuario])
+                            while(quantia > Saldos[DadoNumUsuario] || quantia <= 0)
                             {
+
                                 Console.WriteLine();
-                                Console.WriteLine("Quantia maior que o saldo.");
+                                Console.WriteLine("Quantia inválida.");
                                 Console.Write("Quantia a ser retirada: R$ ");
                                 quantia = double.Parse(Console.ReadLine());
 
@@ -248,10 +258,10 @@ namespace ProjetoBanco
                                     Console.WriteLine($"Destinatário: {Usuarios[conta-1]}");
                                     Console.Write("Quantia a transferir: R$ ");
                                     quantia = double.Parse(Console.ReadLine());
-                                    while (quantia > Saldos[DadoNumUsuario])// Vendo se quantia é maior que o saldo
+                                    while (quantia > Saldos[DadoNumUsuario] || quantia < 0)// Vendo se quantia é maior que o saldo
                                     {
                                         Console.WriteLine();
-                                        Console.WriteLine("Quantia maior que o saldo.");
+                                        Console.WriteLine("Quantia inválida.");
                                         Console.Write("Quantia a transferir: R$ ");
                                         quantia = double.Parse(Console.ReadLine());
 
