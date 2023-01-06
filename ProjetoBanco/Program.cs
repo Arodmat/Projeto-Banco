@@ -187,33 +187,49 @@ namespace ProjetoBanco
                         Console.Write("Selecione opção desejada: ");
                         opcao = int.Parse(Console.ReadLine());
 
+                        if(opcao==0)
+                        {
+                            Console.WriteLine("Logout feito. Voltando ao menu principal");
+                            Console.ReadKey();
+                        }
+
                         if (opcao == 1)
                         {
                             Console.WriteLine();
                             Console.Write("Quantia a ser depositada: R$ ");
                             quantia = double.Parse(Console.ReadLine());
-                            while (quantia <= 0)
+                            while (quantia < 0)
                             {
 
                                 Console.WriteLine();
                                 Console.WriteLine("Quantia inválida.");
-                                Console.Write("Quantia a ser retirada: R$ ");
+                                Console.Write("Quantia a ser depositada: R$ ");
                                 quantia = double.Parse(Console.ReadLine());
 
                             }
-                            Saldos[DadoNumUsuario] += quantia;
-                            Console.WriteLine();
-                            Console.WriteLine("Depósito realizado.");
-                            Console.WriteLine($"Novo saldo: R$ {Saldos[DadoNumUsuario]}");
-                            opcao = 4;
-                            Console.ReadKey(); // faz uma pausa na tela e espera o usuário digitar qualquer coisa pra continuar
+                            if(quantia == 0)
+                            {
+                                Console.WriteLine("Voltando ao menu de manipulação da conta...");
+                                opcao = 4;
+                                Console.ReadKey();
+                            }
+                            else
+                            {
+                                Saldos[DadoNumUsuario] += quantia;
+                                Console.WriteLine();
+                                Console.WriteLine("Depósito realizado.");
+                                Console.WriteLine($"Novo saldo: R$ {Saldos[DadoNumUsuario]}");
+                                opcao = 4;
+                                Console.ReadKey(); // faz uma pausa na tela e espera o usuário digitar qualquer coisa pra continuar
+
+                            }
                         }
                         else if(opcao == 2)
                         {
                             Console.WriteLine();
                             Console.Write("Quantia a ser retirada: R$ ");
                             quantia = double.Parse(Console.ReadLine());
-                            while(quantia > Saldos[DadoNumUsuario] || quantia <= 0)
+                            while(quantia > Saldos[DadoNumUsuario] || quantia < 0)
                             {
 
                                 Console.WriteLine();
@@ -222,12 +238,22 @@ namespace ProjetoBanco
                                 quantia = double.Parse(Console.ReadLine());
 
                             }
-                            Saldos[DadoNumUsuario] -= quantia;
-                            Console.WriteLine();
-                            Console.WriteLine("Saque realizado.");
-                            Console.WriteLine($"Novo saldo: R$ {Saldos[DadoNumUsuario]}");
-                            opcao = 4;
-                            Console.ReadKey(); // faz uma pausa na tela e espera o usuário digitar qualquer coisa pra continuar
+                            if (quantia == 0)
+                            {
+                                Console.WriteLine("Voltando ao menu de manipulação da conta...");
+                                opcao = 4;
+                                Console.ReadKey();
+                            }
+                            else
+                            {
+                                Saldos[DadoNumUsuario] -= quantia;
+                                Console.WriteLine();
+                                Console.WriteLine("Saque realizado.");
+                                Console.WriteLine($"Novo saldo: R$ {Saldos[DadoNumUsuario]}");
+                                opcao = 4;
+                                Console.ReadKey(); // faz uma pausa na tela e espera o usuário digitar qualquer coisa pra continuar
+
+                            }
 
                         }
                         else if(opcao==3)
@@ -271,8 +297,16 @@ namespace ProjetoBanco
                                     Console.WriteLine();
                                     Console.WriteLine("Transferência realizada.");
                                     Console.WriteLine($"Saldo atual: R$ {Saldos[DadoNumUsuario]}");
+                                    Console.ReadKey();
+
                                 }
-                                Console.ReadKey();
+                                else // se a pessoa digitou zero
+                                {
+                                    Console.WriteLine("Voltando ao menu de manipulação da conta...");
+                                    opcao = 4;
+                                    Console.ReadKey();
+
+                                }
 
                             }
                         }
